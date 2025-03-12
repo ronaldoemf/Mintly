@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background: 140 40% 98%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 355.7 100% 97.3%;
+
+    --secondary: 140 40% 96%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 140 40% 96%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 140 40% 96%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.5rem;
+
+    --gradient-start: 140 40% 90%;
+    --gradient-end: 200 40% 90%;
+}
+
+.dark {
+    --background: 224 71% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 222 84% 5%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 222 84% 5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+
+    --secondary: 217 19% 27%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217.2 32.6% 17.5%;
+
+    --gradient-start: 140 40% 25%;
+    --gradient-end: 200 40% 25%;
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground transition-colors duration-300;
+    }
+}
+
+.gradient-bg {
+    background: linear-gradient(
+        135deg,
+        hsl(var(--gradient-start)) 0%,
+        hsl(var(--gradient-end)) 100%
+    );
+}
+
+/* Custom styles for the heatmap */
+.react-calendar-heatmap .color-scale-1 {
+    fill: #065f46;
+}
+.react-calendar-heatmap .color-scale-2 {
+    fill: #047857;
+}
+.react-calendar-heatmap .color-scale-3 {
+    fill: #059669;
+}
+.react-calendar-heatmap .color-scale-4 {
+    fill: #10b981;
+}
+
+.dark .react-calendar-heatmap .color-empty {
+    fill: #1e3a32;
+}
+.dark .react-calendar-heatmap .color-scale-1 {
+    fill: #065f46;
+}
+.dark .react-calendar-heatmap .color-scale-2 {
+    fill: #047857;
+}
+.dark .react-calendar-heatmap .color-scale-3 {
+    fill: #059669;
+}
+.dark .react-calendar-heatmap .color-scale-4 {
+    fill: #10b981;
+}
+
+@layer utilities {
+    .animate-gradient-x {
+        animation: gradient-x 15s ease infinite;
+    }
+
+    @keyframes gradient-x {
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+}
